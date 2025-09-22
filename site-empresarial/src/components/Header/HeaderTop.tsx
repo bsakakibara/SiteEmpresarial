@@ -9,8 +9,8 @@ const HeaderTop = () => {
       <Toolbar
         sx={{
           justifyContent: "space-between",
-          px: { xs: 2, sm: 4 },
-          py: { xs: 1, sm: 2 },
+          px: { xs: 1, sm: 4 },
+          py: { xs: 1, sm: 4 },
           backgroundColor: "background.default", 
           color: "text.primary",
         }}
@@ -24,7 +24,7 @@ const HeaderTop = () => {
 
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 1, sm: 2 } }}>
           <Typography variant="body2" color="textSecondary">Rua Exemplo, 123</Typography>
-          <Divider orientation="vertical" flexItem sx={{ mx: 1 }} />
+          <Divider orientation="vertical" flexItem sx={{ mx: 1, borderColor: "highlight.main" }} />
           <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1.5 } }}>
             <IconButton size="small" color="primary"><ShoppingCartIcon fontSize="medium" /></IconButton>
             <IconButton size="small" color="primary"><SearchIcon fontSize="medium" /></IconButton>

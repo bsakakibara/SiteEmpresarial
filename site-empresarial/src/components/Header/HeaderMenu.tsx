@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Toolbar, Button, Box, Typography, Menu, MenuItem } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import theme from "../../theme/theme";
 
 const HeaderMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -21,8 +22,7 @@ const HeaderMenu = () => {
         display: "flex",
         justifyContent: "space-between",
         px: { xs: 2, sm: 4 },
-        py: { xs: 0.5, sm: 1 },
-        mt: -2
+        py: { xs: 0, sm: 0 },
       }}
     >
       <Box sx={{ width: { xs: "5%", sm: "2%" } }} />
@@ -31,9 +31,14 @@ const HeaderMenu = () => {
         {["Home", "Serviços", "Sobre", "Contato"].map((item) => (
           <Box key={item}>
             <Button
-              color="primary"
               endIcon={<KeyboardArrowDownIcon />}
-              sx={{ py: 0.5, minHeight: 0 }}
+              sx={{
+                py: 0.5,
+                minHeight: 0,
+                color: theme.palette.highlight.main,
+                fontWeight: 600,
+                "&:hover": { color: theme.palette.highlight.main },
+              }}
               onMouseEnter={(e) => handleOpen(e, item)}
             >
               {item}
@@ -45,16 +50,19 @@ const HeaderMenu = () => {
               MenuListProps={{ onMouseLeave: handleClose }}
               anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               transformOrigin={{ vertical: "top", horizontal: "left" }}
-              PaperProps={{ elevation: 3, sx: { mt: 0.5, minWidth: 160 } }}
+              PaperProps={{ elevation: 3, sx: { mt: 2, minWidth: 160 } }}
             >
-              <MenuItem disabled>Teste {item}</MenuItem>
+              <MenuItem>Teste {item}</MenuItem>
             </Menu>
           </Box>
         ))}
       </Box>
 
-      <Typography variant="body2" color="textSecondary" sx={{ textAlign: "right" }}>
-        Tel: (11) 99999-9999
+      <Typography variant="body2" sx={{ fontWeight: 600,}}>
+        Tel:{" "}
+        <Box component="span" sx={{ color: theme.palette.highlight.main }}>
+          (02) 123 333 444
+        </Box>
       </Typography>
 
       <Box sx={{ width: { xs: "5%", sm: "2%" } }} />

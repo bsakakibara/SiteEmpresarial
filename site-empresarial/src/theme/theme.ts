@@ -1,4 +1,13 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, type PaletteColorOptions } from "@mui/material/styles";
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    highlight: Palette['primary'];
+  }
+  interface PaletteOptions {
+    highlight?: PaletteColorOptions;
+  }
+}
 
 export const theme = createTheme({
   typography: {
@@ -10,15 +19,19 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#ffffff",        
+      main: "#ffffff",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#404d60",        
+      main: "#404d60",
       contrastText: "#404d60",
     },
+    highlight: {
+      main: "#00e0c5",
+      contrastText: "#000000",
+    },
     background: {
-      default: "#004767",     
+      default: "#004767",
       paper: "#004767",
     },
     text: {
@@ -32,7 +45,44 @@ export const theme = createTheme({
         root: {
           backgroundColor: "#004767",
           boxShadow: "none",
-          paddingTop: "100px",
+        },
+      },
+    },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: "#ffffff",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "#ffffff",
+          textTransform: "none",
+          "&:hover": {
+            color: "#00e0c5",
+          },
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: "#ffffff",
+          color: "#000000",
+          borderTop: "3px solid #00e0c5",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          color: "#000000",
+          "&:hover": {
+            backgroundColor: "#00e0c5",
+            color: "#ffffff",
+          },
         },
       },
     },
