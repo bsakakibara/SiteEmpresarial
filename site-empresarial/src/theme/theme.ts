@@ -13,6 +13,7 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Montserrat, Arial, sans-serif",
     fontSize: 14,
+    h5: { fontWeight: 800 },
     h6: { fontWeight: 600 },
     body1: { color: "#404d60" },
     body2: { color: "#404d60" },
@@ -89,6 +90,7 @@ export const theme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
+          fontFamily: "Montserrat, Arial, sans-serif",
           color: "#ffffff",
           textDecoration: "none",
           "&:hover": {
@@ -100,6 +102,7 @@ export const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
+          fontFamily: "Montserrat, Arial, sans-serif",
           color: "#ffffff",
         },
       },

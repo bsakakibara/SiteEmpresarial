@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Link, IconButton } from "@mui/material";
+import { Box, Typography, Grid, Link, IconButton, Divider } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -11,18 +11,32 @@ const Footer = () => {
       sx={{
         backgroundColor: "background.default",
         color: "text.primary",
-        pt: 8,
-        pb: 4
       }}
     >
-      <Box sx={{ maxWidth: '100%', mx: "auto", px: { xs: 2, sm: 4 } }}>
-        <Grid container spacing={6} justifyContent="space-evenly" alignItems="center">
+      <Box
+        sx={{
+          maxWidth: "100%",
+          mx: "auto",
+          px: { xs: 2, sm: 6 },
+          py: { xs: 6, sm: 6 },
+        }}
+      >
+        <Grid
+          container
+          spacing={4}
+          justifyContent="space-between"
+          alignItems="flex-start"
+          sx={{
+            maxWidth: "1100px",
+            mx: "auto",
+          }}
+        >
           {/* Coluna 1 */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" sx={{ mb: 4 }}>
+            <Typography variant="h5" sx={{ mb: 4 }}>
               MinhaMarca
             </Typography>
-            <Typography sx={{ mb: 2, whiteSpace: "pre-line" }}>
+            <Typography variant="body2" sx={{ mb: 2, whiteSpace: "pre-line" }}>
               Full suite enable teams to develop unique{"\n"}search and discovery experiences.
             </Typography>
             <Box sx={{ display: "flex", gap: 1 }}>
@@ -35,20 +49,20 @@ const Footer = () => {
 
           {/* Coluna 2 */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" sx={{ mb: 4 }}>
+            <Typography variant="h5" sx={{ mb: 4 }}>
               Recursos
             </Typography>
             <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
               {["Parceiros e publicidade", "Sobre nós e a empresa", "Serviços e projetos", "Contato online"].map((text, idx) => (
-                <li key={idx} style={{ marginBottom: 6, display: "flex", alignItems: "center", gap: 6 }}>
+                <li key={idx} style={{ marginBottom: 6, display: "flex", alignItems: "center", gap: 10 }}>
                   {/* Traço highlight */}
                   <Box sx={{ width: 12, height: 2, backgroundColor: theme.palette.highlight.main }} />
                   <Link
                     href="#"
                     underline="hover"
                     sx={{
-                      fontFamily: "Montserrat, Arial, sans-serif",
-                      color: "text.primary"
+                      color: "text.primary",
+                      fontSize: 13,
                     }}
                   >
                     {text}
@@ -59,8 +73,28 @@ const Footer = () => {
           </Grid>
 
           {/* Coluna 3 */}
-          <Grid item xs={12} sm={12} md={4}>
-            <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
+          <Grid item xs={12} sm={6} md={4}
+            sx={{
+              backgroundColor: "#0000001C",
+              borderRadius: 1,
+              p: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "flex-start",
+            }}
+          >
+            <Box component="ul"
+              sx={{
+                listStyle: "none",
+                p: 0,
+                m: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+                width: "100%",
+                fontSize: 13,
+              }}
+            >
               {[
                 { label: "Endereço", value: "139 Baker St, E1 7PT, London" },
                 { label: "Email", value: "contacts@example.com" },
@@ -68,12 +102,29 @@ const Footer = () => {
                 { label: "Horário de funcionamento", value: "8am-5pm Seg - Sex" }
               ].map((item, idx) => (
                 <li key={idx} style={{ marginBottom: 12 }}>
-                  <Typography variant="subtitle2"
-                    sx={{ fontWeight: 600 }}>
-                    {item.label}
-                  </Typography>
-                  <Box sx={{ borderBottom: "1px solid #ccc", mb: 1 }} />
-                  <Typography variant="body2">{item.value}</Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.5,
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <Typography variant="subtitle2"
+                      sx={{ fontWeight: 600 }}>
+                      {item.label}
+                    </Typography>
+                    <Box
+                      sx={{
+                        width: 10,
+                        height: 2,
+                        backgroundColor: theme.palette.highlight.main,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Box sx={{ borderBottom: "1px solid #ccc", mb: 0 }} />
+                    <Typography variant="body2">{item.value}</Typography>
+                  </Box>
                 </li>
               ))}
             </Box>
@@ -81,19 +132,23 @@ const Footer = () => {
         </Grid>
       </Box>
       {/* Footer Bar */}
+
+      <Divider />
+
       <Box
         sx={{
-          borderTop: "1px solid #ccc",
-          px: { xs: 2, sm: 4 },
+          maxWidth: '1100px',
+          width: "100%",         
+          px: { xs: 0, sm: 4 },
           py: 2,
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" }, 
-          justifyContent: "space-around",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: "space-between",
           alignItems: "center",
-          gap: 1, 
-          fontSize: 14,
+          mx: "auto",            
+          gap: 2,
         }}>
-        <Typography component="span">
+        <Typography component="span" variant="body2">
           © 2025 MinhaMarca. Handmade by{" "}
           <Link
             href="https://example.com"
@@ -104,13 +159,13 @@ const Footer = () => {
           </Link>
           .
         </Typography>
-        <Box component="span" sx={{ display: "inline-flex", ml: 2, gap: 2 }}>
+        <Box component="span" sx={{ display: "inline-flex", ml: 0, gap: 1, fontSize: 13 }}>
           <Link href="#" sx={{ color: "highlight.main" }}>Contato</Link>
           <span>|</span>
           <Link href="#" sx={{ color: "highlight.main" }}>Política de Privacidade</Link>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 };
 

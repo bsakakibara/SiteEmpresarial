@@ -8,14 +8,13 @@ const HeaderTop = () => {
     <>
       <Toolbar
         sx={{
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           px: { xs: 1, sm: 4 },
           py: { xs: 1, sm: 4 },
-          backgroundColor: "background.default", 
+          backgroundColor: "background.default",
           color: "text.primary",
         }}
       >
-        <Box sx={{ width: { xs: "5%", sm: "5%" } }} />
 
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1.5 } }}>
           <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>logo</Typography>
@@ -23,17 +22,24 @@ const HeaderTop = () => {
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 1, sm: 2 } }}>
-          <Typography variant="body2" color="textSecondary">Rua Exemplo, 123</Typography>
+          <Typography variant="body2" color="textSecondary">
+            Rua Exemplo, 123 Município/SP
+          </Typography>
           <Divider orientation="vertical" flexItem sx={{ mx: 1, borderColor: "highlight.main" }} />
           <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1.5 } }}>
-            <IconButton size="small" color="primary"><ShoppingCartIcon fontSize="medium" /></IconButton>
-            <IconButton size="small" color="primary"><SearchIcon fontSize="medium" /></IconButton>
-            <FlagIcon fontSize="small" />
-            <Typography variant="body2" color="textSecondary">Brasil</Typography>
+            <IconButton size="small" color="primary">
+              <ShoppingCartIcon sx={{ fontSize: 26 }} />
+            </IconButton>
+            <IconButton size="small" color="primary">
+              <SearchIcon sx={{ fontSize: 26 }} />
+            </IconButton>
+            <FlagIcon sx={{ fontSize: 26 }} />
+            <Typography variant="body2" color="textSecondary"
+              sx={{ fontWeight: 600, fontSize: 16 }}
+            >BR
+            </Typography>
           </Box>
         </Box>
-
-        <Box sx={{ width: { xs: "5%", sm: "5%" } }} />
       </Toolbar>
 
       <Divider sx={{ mt: { xs: 1, sm: 2 } }} />
