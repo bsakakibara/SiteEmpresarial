@@ -17,7 +17,7 @@ const HeaderTop = () => {
       >
 
         <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, sm: 1.5 } }}>
-          <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>logo</Typography>
+          <Typography variant="h6" color="primary" sx={{ fontWeight: 200 }}>logo</Typography>
           <Typography variant="h4" color="primary" sx={{ fontWeight: 700 }}>MinhaEmpresa</Typography>
         </Box>
 
